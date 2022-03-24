@@ -22,18 +22,21 @@ event.target.classList.add('hovered')
 })
 
 
-let button = document.querySelector('.button');
-let squares = document.querySelectorAll('.square');
-
-button.addEventListener('click', ()=> {squares.forEach(square => {
-    square.classList.remove('hovered');
-})});
-
 let userInput = document.querySelector('.slider');
 let boxNumber = userInput.value;
 
-userInput.addEventListener('change', () => {
+userInput.addEventListener('input', () => {
     let boxNumber = userInput.value;
     makePad(boxNumber);
 })
 makePad(boxNumber);
+
+let button = document.querySelector('.button');
+
+
+button.addEventListener('click', ()=> {
+    let squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+    square.classList.remove('hovered');
+    
+})});
